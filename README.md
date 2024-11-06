@@ -9,32 +9,31 @@
 
 ## Overview
 
-The Text Sentiment Analysis project is designed to analyze and categorize the sentiment of text inputs as positive, negative, or neutral. This tool leverages machine learning and natural language processing to understand emotional undertones within text data, making it useful for applications like customer feedback analysis, social media monitoring, and more.
+Proyek Analisis Sentimen Teks dirancang untuk menganalisis dan mengkategorikan sentimen dari teks menjadi positif, negatif, atau netral. Alat ini memanfaatkan pembelajaran mesin dan pemrosesan bahasa alami untuk memahami nilai emosional dalam data teks, sehingga berguna untuk aplikasi seperti analisis umpan balik pelanggan, pemantauan media sosial, dan lainnya.
 
-For example, given the input *"I don't love you, like I did yesterday."* the sentiment analysis detects a **negative** sentiment. In contrast, with the input *"You are so beautiful today"* the sentiment is identified as **positive**.
+Sebagai contoh, dengan input *"I don't love you, like I did yesterday."* analisis sentimen mendeteksi sentimen **negatif**. Sebaliknya, dengan masukan *"You are so beautiful today"* sentimen yang diidentifikasi adalah **positive**.
 
 ## Model Components
 
-1. **Data Model**: The `data_model` module handles data preprocessing, transforming raw text into a format suitable for model ingestion. This module cleans, tokenizes, and prepares data, improving model accuracy by ensuring consistency in input formatting.
-
-2. **Runtime Model**: The `runtime_model` module integrates with the Hugging Face library and leverages pre-trained language models fine-tuned for sentiment analysis. This component is responsible for predicting sentiment labels based on input text.
-
-3. **Configuration Management**: Through the configuration files (`config.yml`), users can specify model parameters, data paths, and various runtime settings. This flexibility allows easy tuning of the model to suit specific sentiment analysis tasks or datasets.
+1. **Data Model**: Modul `data_model` menangani pemrosesan data dan mengubah teks mentah menjadi format yang sesuai untuk dimasukkan ke dalam model. Modul ini membersihkan, melakukan tokenisasi, dan menyiapkan data sehingga meningkatkan akurasi model dengan memastikan konsistensi dalam format input.
+   
+2. **Runtime Model**: Modul `runtime_model` terintegrasi dengan pustaka Hugging Face dan memanfaatkan model bahasa pra-latih yang telah di-tuning untuk analisis sentimen. Komponen ini bertanggung jawab memprediksi label sentimen berdasarkan teks input.
+   
+3. **Configuration Management**: Melalui file konfigurasi (`config.yml`), pengguna dapat menentukan parameter model, jalur data, dan berbagai pengaturan runtime. Fleksibilitas ini memudahkan penyesuaian model untuk tugas analisis sentimen atau dataset tertentu.
 
 ## Prerequisites
 
-To run this project, ensure the following are installed:
+Untuk menjalankan proyek ini, pastikan persyaratan berikut telah terpasang:
 
-- **Linux/MacOS x86_64** - Skills Network Lab environment is compatible.
-- **Caikit (v0.9.2)** - Installed as part of project setup.
-- **Python (v3.8+)** - Python 3.8 is pre-installed in the Skills Network Lab environment.
-- **pip (v23.0+)** - We will upgrade pip to the latest version in the project setup.
+- **Caikit (v0.9.2)** 
+- **Python (v3.8+)** 
+- **pip (v23.0+)** 
 
 ## Getting Started
 
-**1. Clone the Repository**
+**1. Clone Repository**
 
-First, clone this repository to your local machine and navigate into the project directory:
+Pertama, clone repository ke komputer lokal dan masuk ke direktori proyek:
 ```bash
 git clone https://github.com/alifnay/text_sentiment
 cd text-sentiment
@@ -42,51 +41,51 @@ cd text-sentiment
 
 **2. Upgrade pip**
 
-Ensure pip is upgraded to the latest version. This is necessary to install all required packages:
+Pastikan pip diperbarui ke versi terbaru. Ini diperlukan untuk menginstal semua paket yang dibutuhkan:
 ```bash
-python3 -m pip install --upgrade pip
+python -m pip install --upgrade pip
 ```
 
 **3. Install Dependencies**
 
-Install the required libraries listed in requirements.txt. This will include Caikit (v0.9.2) and any other necessary packages:
+Instal dependencies yang dibutuhkan seperti yang tercantum di requirements.txt:
 ```bash
 pip install -r requirements.txt
 ```
 
 **4. Start the Runtime**
 
-To initialize the runtime environment, run the start_runtime.py script. This script sets up and prepares the environment for text sentiment analysis:
+Untuk menginisialisasi lingkungan runtime, jalankan skrip start_runtime.py. Skrip ini menyiapkan dan mempersiapkan lingkungan untuk analisis sentimen teks:
 ```bash
 python start_runtime.py
 ```
 
 **5. Run the Client**
 
-Use client.py to interact with the text sentiment model. This script allows you to input text data and get sentiment predictions:
+Gunakan client.py untuk berinteraksi dengan model sentimen teks. Skrip ini memungkinkan pengguna memasukkan data teks dan mendapatkan prediksi sentimen:
 ```bash
 python client.py
 ```
 
 ## Project Structure
 
-The repository is organized as follows:
+Repository ini diorganisir sebagai berikut:
 
 ```plaintext
 text-sentiment/
-├── start_runtime.py               # Script to initialize the runtime environment
-├── client.py                      # Client script for interacting with the sentiment model
-├── requirements.txt               # Lists dependencies for the project
+├── start_runtime.py               # Skrip untuk inisialisasi lingkungan runtime
+├── client.py                      # Skrip client untuk berinteraksi dengan model sentimen
+├── requirements.txt               # Daftar dependensi proyek
 ├── models/                        
 │   └── text_sentiment/
-│       └── config.yml             # Configuration file for model settings
+│       └── config.yml             # File konfigurasi untuk pengaturan model
 └── text_sentiment/                
-    ├── config.yml                 # Main configuration file
-    ├── __init__.py                # Package initialization
-    ├── data_model/                # Data model submodule
-    │   ├── classification.py      # Classification logic
+    ├── config.yml                 # File konfigurasi utama
+    ├── __init__.py                # Inisialisasi paket
+    ├── data_model/                # Submodul data model
+    │   ├── classification.py      # Logika klasifikasi
     │   └── __init__.py            
-    └── runtime_model/             # Runtime model submodule
-        ├── hf_module.py           # Hugging Face model integration
+    └── runtime_model/             # Submodul model runtime
+        ├── hf_module.py           # Integrasi model Hugging Face
         └── __init__.py
 ```
