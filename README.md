@@ -13,6 +13,14 @@ The Text Sentiment Analysis project is designed to analyze and categorize the se
 
 For example, given the input *"I don't love you, like I did yesterday."* the sentiment analysis detects a **negative** sentiment. In contrast, with the input *"You are so beautiful today"* the sentiment is identified as **positive**.
 
+## Model Components
+
+1. **Data Model**: The `data_model` module handles data preprocessing, transforming raw text into a format suitable for model ingestion. This module cleans, tokenizes, and prepares data, improving model accuracy by ensuring consistency in input formatting.
+
+2. **Runtime Model**: The `runtime_model` module integrates with the Hugging Face library and leverages pre-trained language models fine-tuned for sentiment analysis. This component is responsible for predicting sentiment labels based on input text.
+
+3. **Configuration Management**: Through the configuration files (`config.yml`), users can specify model parameters, data paths, and various runtime settings. This flexibility allows easy tuning of the model to suit specific sentiment analysis tasks or datasets.
+
 ## Prerequisites
 
 To run this project, ensure the following are installed:
@@ -50,7 +58,7 @@ pip install -r requirements.txt
 
 To initialize the runtime environment, run the start_runtime.py script. This script sets up and prepares the environment for text sentiment analysis:
 ```bash
-python3 start_runtime.py
+python start_runtime.py
 ```
 
 **5. Run the Client**
